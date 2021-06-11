@@ -8,6 +8,7 @@ public class ReadStringBufferedReader {
 
         System.out.print("Enter Your name: ");
         String name = rdr.readLine();
+        System.out.println("Hello " + name);
 
         System.out.print("Enter you Roll No: ");
         String rollNo = rdr.readLine();
@@ -15,13 +16,12 @@ public class ReadStringBufferedReader {
         String exceptionMsg = "";
         try {
             Integer.parseInt(rollNo);
+            System.out.println("Your Roll No. is " + rollNo + exceptionMsg);
         } catch (NumberFormatException e) {
             exceptionMsg = " and it contains some non-integer elements.";
+        } finally {
+            System.out.println("Thanks for using this program that takes input through BufferedReader");
         }
-
-        System.out.println("Hello " + name);
-        System.out.println("Your Roll No. is " + rollNo + exceptionMsg);
-        System.out.println("Thanks for using this program that takes input through BufferedReader");
 
     }
 }
