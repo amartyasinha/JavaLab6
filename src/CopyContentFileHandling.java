@@ -8,7 +8,7 @@ public class CopyContentFileHandling {
             System.exit(101);
         }
         try {
-            File fin = new File(args[0]);
+            FileReader fin = new FileReader(args[0]);
             FileWriter fout = new FileWriter(args[1]);
             Scanner sc = new Scanner(fin);
 
@@ -17,6 +17,7 @@ public class CopyContentFileHandling {
                 fout.write(sc.nextLine());
                 System.out.println("Completed Reading text of Source File");
             }
+            fin.close();
             fout.close();
 
         } catch (FileNotFoundException e) {
